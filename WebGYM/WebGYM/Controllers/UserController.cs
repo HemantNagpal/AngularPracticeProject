@@ -64,6 +64,7 @@ namespace WebGYM.Controllers
 
                     var command = AutoMapper.Mapper.Map<NewUser>(users);
 
+					// calling mediatR handler
                     var insertedUser = _mediatr.Send<Users>(command).Result;
 
                     var response = new HttpResponseMessage()
